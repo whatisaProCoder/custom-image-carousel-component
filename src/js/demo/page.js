@@ -1,7 +1,18 @@
-import threeDotIcon from "../../icons/three-dot-icon.svg";
-import settingsIcon from "../../icons/settings-icon.svg";
-import hamburgerIcon from "../../icons/hamburger-icon.svg";
-import { ActionItem, CustomDropDownMenu } from "../components/drop_down_menu";
+import npmLogo from "../../icons/npm_logo.svg";
+import GitHubLogo from "../../icons/github_logo.svg";
+import htmlImage from "../../images/html_image.webp";
+import cssImage from "../../images/css_image.webp";
+import javascriptImage from "../../images/javascript_image.png";
+import nodejsImage from "../../images/nodejs_image.webp";
+import npmImage from "../../images/npm_image.webp";
+import webpackImage from "../../images/webpack_image.png";
+import tailwindcssImage from "../../images/tailwindcss_image.webp";
+import prettierImage from "../../images/prettier_image.webp";
+import eslintImage from "../../images/eslint_image.png";
+import {
+  CustomImageCarousel,
+  ImageItem,
+} from "../components/CustomImageCarousel";
 
 export default function createDemoPage() {
   const content = document.querySelector(".content");
@@ -11,70 +22,47 @@ export default function createDemoPage() {
   demoPage.classList.add("demo-page");
   demoPage.classList.add(
     "flex",
+    "flex-col",
+    "gap-2",
     "items-center",
     "justify-center",
     "h-screen",
     "w-screen",
     "bg-[#E1E1E1]",
+    "py-2.5",
+    "px-8.75",
   );
 
   demoPage.innerHTML = /* html */ `
-        <div class="demo-card flex flex-col items-center gap-1 border-1 border-[#d7d7d7] bg-[#f5f5f5] rounded-md shadow-[0px_46px_130px_rgba(0,0,0,15%)] max-sm:h-full max-sm:w-full">
-            <div class="border-b-1 border-b-[#D7D7D7] px-10 py-4 text-3xl text-center font-semibold max-sm:w-full max-sm:text-2xl">Custom Dropdown Menu</div>
-            <div class="mt-6 bg-[#a918ca] p-1 px-2 rounded-md text-[#F5E4F5] font-semibold text-s max-sm:mt-32">Click the Three Menu Icons below</div>
-            <div class="mt-12 flex flex-row items-center gap-12">
-                <img id="settings-button" class="h-12 w-12 bg-[#E1E1E1] p-2 rounded-full hover:bg-[#D7D7D7] active:bg-[#CDCDCD] transition" src="${settingsIcon}"> 
-                <img id="three-dot-menu-button" class="h-12 w-12 bg-[#E1E1E1] p-2 rounded-full hover:bg-[#D7D7D7] active:bg-[#CDCDCD] transition" src="${threeDotIcon}"> 
-                <img id="hamburger-menu-button" class="h-12 w-12 bg-[#E1E1E1] p-2 rounded-full hover:bg-[#D7D7D7] active:bg-[#CDCDCD] transition" src="${hamburgerIcon}"> 
-            </div>
-            <div class="credits mt-12 mb-4 max-sm:fixed max-sm:bottom-0">Made with <span class="text-[#FF9500] font-medium">VanillaJS</span>, by <a href="https://github.com/whatisaProCoder" target="_blank" class="text-[#6E88FB] font-medium hover:underline">whatisaProCoder</a></div>
-        </div>
-    `;
+    <div class="flex flex-row gap-1.5 w-full">
+      <div class="bg-[#F5F5F5] px-2.25 py-1.5 text-m font-bold rounded-md border-1 border-[#d7d7d7] border-l-7 border-l-[#7F95FA] flex-1 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
+        Image Carousel UI Component
+      </div>
+      <div class="flex flex-row gap-4 items-center bg-[#F5F5F5] rounded-md border-1 border-[#d7d7d7] px-3 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
+        <img src="${npmLogo}" class="h-3.5 pt-0.5">
+        <img src="${GitHubLogo}" class="h-3.5 pb-0.5">
+      </div>
+    </div>
+    <div id="component-container" class="w-full h-[400px]"></div> 
+    <div class="bg-[#F5F5F5] px-2.25 py-1.75 w-full text-center text-sm font-light rounded-md border-1 border-[#d7d7d7] shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
+        Made with <span class="font-medium text-[#FF9500]">VanillaJS</span>, by <span class="font-medium text-[#0432FF]">whatisaProCoder</span>
+    </div>     
+  `;
 
   content.appendChild(demoPage);
 
-  new CustomDropDownMenu({
-    menuTitle: "Settings",
-    triggerElementID: "settings-button",
-    actionItemArray: [
-      new ActionItem("Themes", () => console.log("Themes pressed")),
-      new ActionItem("Preferences", () => console.log("Preferences pressed")),
-      new ActionItem("Import", () => console.log("Import pressed")),
-      new ActionItem("Export", () => console.log("Export pressed")),
-      new ActionItem("Reset", () => console.log("Reset pressed")),
+  new CustomImageCarousel({
+    containerID: "component-container",
+    imageItemArray: [
+      new ImageItem({ src: htmlImage, scale: 1 }),
+      new ImageItem({ src: cssImage, scale: 1 }),
+      new ImageItem({ src: javascriptImage, scale: 1 }),
+      new ImageItem({ src: nodejsImage, scale: 1 }),
+      new ImageItem({ src: npmImage, scale: 1 }),
+      new ImageItem({ src: webpackImage, scale: 1 }),
+      new ImageItem({ src: tailwindcssImage, scale: 1 }),
+      new ImageItem({ src: prettierImage, scale: 1 }),
+      new ImageItem({ src: eslintImage, scale: 1 }),
     ],
-    height: "210px",
-    width: "170px",
-    logEvent: true,
-  }).setEventListeners();
-
-  new CustomDropDownMenu({
-    menuTitle: "Select",
-    triggerElementID: "three-dot-menu-button",
-    actionItemArray: [
-      new ActionItem("Item 1", () => console.log("Item 1 pressed")),
-      new ActionItem("Item 2", () => console.log("Item 2 pressed")),
-      new ActionItem("Item 3", () => console.log("Item 3 pressed")),
-      new ActionItem("Item 4", () => console.log("Item 4 pressed")),
-      new ActionItem("Item 5", () => console.log("Item 5 pressed")),
-    ],
-    height: "210px",
-    width: "170px",
-    logEvent: true,
-  }).setEventListeners();
-
-  new CustomDropDownMenu({
-    menuTitle: "Menu",
-    triggerElementID: "hamburger-menu-button",
-    actionItemArray: [
-      new ActionItem("Action 1", () => console.log("Menu Action 1 pressed")),
-      new ActionItem("Action 2", () => console.log("Menu Action 2 pressed")),
-      new ActionItem("Action 3", () => console.log("Menu Action 3 pressed")),
-      new ActionItem("Action 4", () => console.log("Menu Action 4 pressed")),
-      new ActionItem("Action 5", () => console.log("Menu Action 5 pressed")),
-    ],
-    height: "210px",
-    width: "170px",
-    logEvent: true,
-  }).setEventListeners();
+  }).initialise();
 }
