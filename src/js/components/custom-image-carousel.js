@@ -55,6 +55,7 @@ export class CustomImageCarousel {
         items[index].scrollIntoView({
           behavior: "smooth",
           inline: "center",
+          block: "center",
         });
       }
     }, 1000);
