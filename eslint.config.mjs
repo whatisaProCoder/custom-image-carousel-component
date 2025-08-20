@@ -15,5 +15,5 @@ export default [
       ...js.configs.recommended.rules,
     }
   },
-  prettierConfig
+  prettierConfig,
 ];

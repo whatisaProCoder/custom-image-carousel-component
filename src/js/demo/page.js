@@ -66,5 +66,5 @@ export default function createDemoPage() {
     ],
   })
     .initialise()
-    .scrollToItem(1);
+    .scrollToItem(5);
 }
