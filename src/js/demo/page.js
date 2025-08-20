@@ -12,7 +12,7 @@ import eslintImage from "../../images/eslint_image.png";
 import {
   CustomImageCarousel,
   ImageItem,
-} from "../components/CustomImageCarousel";
+} from "../components/custom-image-carousel";
 
 export default function createDemoPage() {
   const content = document.querySelector(".content");
