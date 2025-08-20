@@ -35,15 +35,16 @@ export class CustomImageCarousel {
     });
   }
   scrollToItem(index) {
-    const imageContainers = this.containerElement.querySelectorAll(
+    const items = this.containerElement.querySelectorAll(
       ".mcic-image-container",
     );
+    console.log(items);
 
-    if (imageContainers[index]) {
-      const item = imageContainers[index];
-      this.imageGroupElement.scrollTo({
-        left: item.offsetLeft, // for horizontal
+    if (items[index]) {
+      items[index].scrollIntoView({
         behavior: "smooth",
+        inline: "nearest",
+        block: "nearest",
       });
     }
   }
