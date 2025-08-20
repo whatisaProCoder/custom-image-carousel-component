@@ -15,8 +15,18 @@ export class CustomImageCarousel {
         `;
 
     this.#populateImageGroup();
+    this.#preventUserScrolling();
 
     return this;
+  }
+  #preventUserScrolling() {
+    this.imageGroupElement.addEventListener(
+      "wheel",
+      (event) => {
+        event.preventDefault();
+      },
+      { passive: false },
+    );
   }
   #populateImageGroup() {
     this.imageGroupElement =
@@ -35,18 +45,19 @@ export class CustomImageCarousel {
     });
   }
   scrollToItem(index) {
-    const items = this.containerElement.querySelectorAll(
-      ".mcic-image-container",
-    );
-    console.log(items);
+    setTimeout(() => {
+      const items = this.containerElement.querySelectorAll(
+        ".mcic-image-container",
+      );
+      console.log(items);
 
-    if (items[index]) {
-      items[index].scrollIntoView({
-        behavior: "smooth",
-        inline: "nearest",
-        block: "nearest",
-      });
-    }
+      if (items[index]) {
+        items[index].scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+        });
+      }
+    }, 1000);
   }
 }
 
