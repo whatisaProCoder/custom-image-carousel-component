@@ -9,3 +9,6 @@ out
 
 # eslintcache
 .eslintcache
+
+# husky
+.husky
