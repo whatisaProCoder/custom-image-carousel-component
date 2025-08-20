@@ -35,7 +35,7 @@ export default function createDemoPage() {
 
   demoPage.innerHTML = /* html */ `
     <div class="flex flex-row gap-1.5 w-full">
-      <div class="bg-[#F5F5F5] px-2.25 py-1.5 text-m font-bold rounded-md border-1 border-[#d7d7d7] border-l-7 border-l-[#7F95FA] flex-1 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
+      <div class="bg-[#F5F5F5] px-2.25 py-1.5 text-m font-bold rounded-md border-1 border-[#d7d7d7] border-l-7 border-l-[#AC1CFF] flex-1 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
         Image Carousel UI Component
       </div>
       <div class="flex flex-row gap-4 items-center bg-[#F5F5F5] rounded-md border-1 border-[#d7d7d7] px-3 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
@@ -64,5 +64,7 @@ export default function createDemoPage() {
       new ImageItem({ src: prettierImage, scale: 1 }),
       new ImageItem({ src: eslintImage, scale: 1 }),
     ],
-  }).initialise();
+  })
+    .initialise()
+    .scrollToItem(5);
 }

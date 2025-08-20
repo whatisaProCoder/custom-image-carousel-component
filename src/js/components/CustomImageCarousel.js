@@ -15,6 +15,8 @@ export class CustomImageCarousel {
         `;
 
     this.#populateImageGroup();
+
+    return this;
   }
   #populateImageGroup() {
     this.imageGroupElement =
