@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js",
-    "prepare": "husky && husky install",
+    "git-hooks:init": "npx simple-git-hooks",
     "deploy:make-branch": "git branch gh-pages",
     "deploy:delete-branch": "git branch -D gh-pages && git push origin --delete gh-pages",
     "deploy:sync-branch": "git status && git add . && git commit -m \"final deployment\" && git checkout gh-pages && git merge main --no-edit",
@@ -39,14 +39,17 @@
     "globals": "^16.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
-    "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "prettier": "3.6.2",
+    "simple-git-hooks": "^2.13.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.12",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "!(*.eslintcache)": [],
