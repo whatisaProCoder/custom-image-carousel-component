@@ -90,7 +90,7 @@ export class CustomImageCarousel {
           inline: "center",
         });
       }
-    }, 100);
+    }, 10);
   }
   #handleUserActions() {
     const leftButton = this.#containerElement.querySelector(
