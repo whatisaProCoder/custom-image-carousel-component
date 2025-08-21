@@ -3,7 +3,7 @@
 A lightweight, easy-to-use image carousel component with navigation dots, arrow controls, and smooth scrolling. Perfect for showcasing images in a clean, responsive interface.
 
 ![NPM Version](https://img.shields.io/npm/v/@pd200x/custom-image-carousel)
-![License](https://img.shields.io/npm/l/@pd200x/custom-dropdown-menu)
+[![License](https://img.shields.io/npm/l/@pd200x/custom-dropdown-menu)](https://www.npmjs.com/package/@pd200x/custom-image-carousel)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 
 <p align="center">
