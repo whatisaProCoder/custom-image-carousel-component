@@ -242,6 +242,12 @@
   }
 }
 @layer utilities {
+  .visible {
+    visibility: visible;
+  }
+  .fixed {
+    position: fixed;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {

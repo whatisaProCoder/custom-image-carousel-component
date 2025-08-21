@@ -4,6 +4,12 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 
 ![NPM Version](https://img.shields.io/npm/v/@pd200x/custom-image-carousel)
 ![License](https://img.shields.io/npm/l/@pd200x/custom-image-carousel)
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/@pd200x/custom-image-carousel)
+![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
+
+<p align="center">
+  <img src="./demo.gif" alt="Custom Image Carousel Demo" width="600">
+</p>
 
 ## Features
 
@@ -14,6 +20,7 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 - 🔄 **Smart Navigation** - Arrows hide at the beginning/end of carousel
 - 🚫 **Controlled Scrolling** - Prevents accidental user scrolling
 - ✨ **Easy Integration** - Simple API for quick implementation
+- 🪶 **Lightweight** - No external dependencies except for minimal CSS
 
 ## Installation
 
@@ -223,6 +230,33 @@ Works in all modern browsers including:
 
 - Chrome, Firefox, Safari, Edge
 - Mobile browsers (iOS Safari, Android Chrome)
+
+## Accessibility
+
+The carousel includes several accessibility features:
+
+- Navigation controls are keyboard accessible
+- Arrow buttons have appropriate ARIA roles
+- Navigation dots provide visual feedback
+- All interactive elements are properly labeled for screen readers
+
+## Performance Tips
+
+For optimal performance, consider these tips:
+
+- **Optimize Images**: Use modern formats like WebP and properly sized images
+- **Lazy Loading**: The carousel only loads images that are visible in the viewport
+- **Height Management**: Setting a fixed height for the carousel container prevents layout shifts
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
