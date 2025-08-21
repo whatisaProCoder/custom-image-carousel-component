@@ -547,9 +547,19 @@
     -webkit-user-select: none;
     user-select: none;
   }
+  .max-md\:h-\[200px\] {
+    @media (width < 48rem) {
+      height: 200px;
+    }
+  }
   .max-sm\:h-\[200px\] {
     @media (width < 40rem) {
       height: 200px;
+    }
+  }
+  .max-sm\:px-2 {
+    @media (width < 40rem) {
+      padding-inline: calc(var(--spacing) * 2);
     }
   }
 }
