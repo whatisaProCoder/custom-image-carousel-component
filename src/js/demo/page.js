@@ -37,7 +37,7 @@ export default function createDemoPage() {
   demoPage.innerHTML = /* html */ `
     <div class="flex flex-row gap-1.5 w-full">
       <div class="bg-[#F5F5F5] px-2.25 py-1.5 text-m font-bold rounded-md border-1 border-[#d7d7d7] border-l-7 border-l-[#AC1CFF] flex-1 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
-        Image Carousel UI Component
+        Image Carousel <span class="max-sm:hidden">UI Component<span>
       </div>
       <div class="flex flex-row gap-4 items-center bg-[#F5F5F5] rounded-md border-1 border-[#d7d7d7] px-3 shadow-[0px_4px_8px_rgba(0,0,0,15%)] select-none">
         <img id="npm-button" src="${npmLogo}" class="h-3.5 pt-0.5">

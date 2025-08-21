@@ -559,6 +559,11 @@
       height: 200px;
     }
   }
+  .max-sm\:hidden {
+    @media (width < 40rem) {
+      display: none;
+    }
+  }
   .max-sm\:h-1 {
     @media (width < 40rem) {
       height: calc(var(--spacing) * 1);
