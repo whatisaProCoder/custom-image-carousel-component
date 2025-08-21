@@ -73,13 +73,13 @@
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease,
-    border-width 0.3s ease;
+    scale 0.3s ease;
 }
 
 .mcic-navigation-dot-selected {
   background-color: #4171ff;
   border-color: #6999f5;
-  border-width: 3px;
+  scale: 1.25;
 }
 
 .mcic-left-arrow-button {
