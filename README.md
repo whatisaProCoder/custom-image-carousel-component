@@ -23,6 +23,7 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 - ✨ **Easy Integration** - Simple API with minimal configuration required
 - 🪶 **Lightweight** - No external dependencies except for minimal CSS
 - 🎯 **Targeted Design** - Clean interface focused on showcasing your images
+- 🔄 **Auto Cycling** - Built-in support for automatic image cycling
 
 ## Installation
 
@@ -179,6 +180,8 @@ This step is essential because it:
 | ------------------------------- | -------------------------------------------------------------------- |
 | `initialise()`                  | **Required**: Sets up the carousel and returns the carousel instance |
 | `displayItemNumber(itemNumber)` | Navigates to a specific item (1-based index)                         |
+| `setCycle(delay)`               | Enables auto-cycling with the specified delay (seconds)              |
+| `stopCycle()`                   | Stops auto-cycling behavior                                          |
 
 ## Common Examples
 
@@ -218,6 +221,23 @@ const carousel = new CustomImageCarousel({
 carousel.displayItemNumber(3);
 ```
 
+### Example 3: Auto-Cycling Carousel
+
+```javascript
+// Create and initialize a carousel with auto-cycling
+const autoCyclingCarousel = new CustomImageCarousel({
+  containerID: "auto-carousel",
+  imageItemArray: [
+    new ImageItem({ src: "slide1.jpg", scale: 1 }),
+    new ImageItem({ src: "slide2.jpg", scale: 1 }),
+    new ImageItem({ src: "slide3.jpg", scale: 1 }),
+  ],
+}).initialise();
+
+// Set up auto-cycling with 2 second delay
+autoCyclingCarousel.setCycle(2);
+```
+
 ## Browser Support
 
 Works in all modern browsers including:
@@ -231,6 +251,7 @@ For optimal performance, consider these tips:
 
 - **Optimize Images**: Use modern formats like WebP and properly sized images
 - **Height Management**: Setting a fixed height for the carousel container prevents layout shifts
+- **Auto-cycling**: Use longer intervals (2-3 seconds) for better user experience
 
 ## License
 
