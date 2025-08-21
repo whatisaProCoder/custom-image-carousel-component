@@ -4,7 +4,6 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 
 ![NPM Version](https://img.shields.io/npm/v/@pd200x/custom-image-carousel)
 ![License](https://img.shields.io/npm/l/@pd200x/custom-image-carousel)
-![Bundle Size](https://img.shields.io/bundlephobia/minzip/@pd200x/custom-image-carousel)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 
 <p align="center">
