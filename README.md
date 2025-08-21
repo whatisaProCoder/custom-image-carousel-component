@@ -1,244 +1,230 @@
-# Custom Dropdown Menu
+# Custom Image Carousel
 
-A beginner-friendly, lightweight dropdown menu component that's easy to use and customize. Features smart positioning, smooth animations, and style isolation.
+A lightweight, easy-to-use image carousel component with navigation dots, arrow controls, and smooth scrolling. Perfect for showcasing images in a clean, responsive interface.
 
-![NPM Version](https://img.shields.io/npm/v/@pd200x/custom-dropdown-menu)
-![License](https://img.shields.io/npm/l/@pd200x/custom-dropdown-menu)
+![NPM Version](https://img.shields.io/npm/v/@pd200x/custom-image-carousel)
+![License](https://img.shields.io/npm/l/@pd200x/custom-image-carousel)
 
-## Demo
+## Features
 
-![Dropdown Menu Demo](./demo/recording.gif)
-
-**[Live Demo](https://whatisaprocoder.github.io/custom-dropdown-menu/)** - See the component in action!
+- 🖼️ **Smooth Image Scrolling** - Seamless transition between images
+- 🔢 **Navigation Dots** - Visual indicators of current position
+- ⬅️ **Arrow Controls** - Intuitive navigation buttons
+- 📱 **Responsive Design** - Works on all screen sizes
+- 🔄 **Smart Navigation** - Arrows hide at the beginning/end of carousel
+- 🚫 **Controlled Scrolling** - Prevents accidental user scrolling
+- ✨ **Easy Integration** - Simple API for quick implementation
 
 ## Installation
 
 First, install the package in your project:
 
 ```bash
-npm install @pd200x/custom-dropdown-menu
+npm install @pd200x/custom-image-carousel
 ```
 
 ### Manual Installation (Without npm)
 
 If you're not using npm, you can manually download and include these two essential files:
 
-1. `drop_down_menu.js` - The main component JavaScript file
+1. `custom-image-carousel.js` - The main component JavaScript file
 2. `component.css` - The required CSS styles
 
 You can find these files:
 
 - From the GitHub repo:
-  - `src/js/components/drop_down_menu.js`
+  - `src/js/components/custom-image-carousel.js`
   - `src/css/component.css`
 
 Then include them in your HTML:
 
 ```html
 <link rel="stylesheet" href="path/to/component.css" />
-<script src="path/to/drop_down_menu.js"></script>
+<script src="path/to/custom-image-carousel.js"></script>
 ```
 
 ## Getting Started (Beginner-Friendly Guide)
 
-### Step 1: Add a button or trigger element in your HTML
+### Step 1: Add a container element in your HTML
 
 ```html
-<button id="menu-trigger">Click Me</button>
+<div id="my-carousel" style="height: 400px;"></div>
 ```
 
 ### Step 2: Import and use the component in your JavaScript
 
 ```javascript
 // Import the component
-import { CustomDropDownMenu, ActionItem } from "@pd200x/custom-dropdown-menu";
+import { CustomImageCarousel, ImageItem } from "@pd200x/custom-image-carousel";
 
-// Create menu items (what happens when each item is clicked)
-const menuItems = [
-  new ActionItem("Save", () => alert("Save clicked")),
-  new ActionItem("Delete", () => alert("Delete clicked")),
-  new ActionItem("Share", () => alert("Share clicked")),
+// Create an array of image items
+const imageItems = [
+  new ImageItem({ src: "path/to/image1.jpg", scale: 1 }),
+  new ImageItem({ src: "path/to/image2.jpg", scale: 1 }),
+  new ImageItem({ src: "path/to/image3.jpg", scale: 1 }),
 ];
 
-// Create the dropdown menu
-const menu = new CustomDropDownMenu({
-  menuTitle: "My Menu", // Title at the top of the dropdown
-  triggerElementID: "menu-trigger", // ID of your button from Step 1
-  actionItemArray: menuItems, // Menu items from above
-  height: "200px", // Height of the dropdown
-  width: "180px", // Width of the dropdown
-  logEvent: false, // Set to true to see debug logs
+// Create and initialize the carousel
+const carousel = new CustomImageCarousel({
+  containerID: "my-carousel", // ID of your container from Step 1
+  imageItemArray: imageItems, // Image items from above
 });
 
-// IMPORTANT: Always call this to activate the menu
-menu.setEventListeners();
+// IMPORTANT: Always call initialise() to set up the carousel
+carousel.initialise();
 ```
 
-That's it! Your dropdown menu is ready to use.
+That's it! Your image carousel is ready to use.
 
 ## Features You'll Love
 
-- 🎯 **Smart Positioning** - Menu automatically stays within the screen
-- ✨ **Smooth Animations** - Nice fade-in/fade-out effects
-- 🛡️ **Style Isolation** - Won't conflict with your existing styles
-- 📱 **Works Everywhere** - Responsive on all screen sizes
-- 🖱️ **Click Outside to Close** - Automatically closes when clicking elsewhere
-- 📜 **Scrollable Menus** - Handles long menus with smooth scrolling
-- 🎨 **Easy to Customize** - Simple to style with your own CSS
+- **Smooth Scrolling**: Elegant transitions between images using CSS scroll snapping
+- **Navigation Dots**: Clearly shows which image is currently displayed
+- **Arrow Controls**: Intuitive navigation buttons that appear/disappear intelligently
+- **Responsive Design**: Automatically adapts to different screen sizes
+- **Simple API**: Easy to implement with minimal code
 
 ## How to Customize the Look
 
-You can easily change how the dropdown menu looks by targeting these CSS classes:
+You can easily change how the carousel looks by targeting these CSS classes:
 
 ### Main Classes You Can Style
 
-- `.mycdm-menu-card` - The entire dropdown box
-- `.mycdm-menu-title` - The title bar at the top
-- `.mycdm-action-group` - The container that holds all menu options (scrollable area)
-- `.mycdm-action-item` - Each clickable menu item
+- `.mcic-container` - The entire carousel container
+- `.mcic-image-group` - The scrollable area containing images
+- `.mcic-image-container` - Individual image containers
+- `.mcic-navigation-dots-container` - Container for navigation dots
+- `.mcic-navigation-dot` - Individual navigation dots
+- `.mcic-navigation-dot-selected` - The currently selected dot
+- `.mcic-left-arrow-button` - Left navigation arrow
+- `.mcic-right-arrow-button` - Right navigation arrow
 
 ### Example: Custom Styling
 
 ```css
-/* Make the dropdown more stylish */
-.mycdm-menu-card {
-  border-radius: 8px !important; /* Rounded corners */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important; /* Better shadow */
+/* Make the carousel container more stylish */
+.mcic-container {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Give the title a colored background */
-.mycdm-menu-title {
+/* Style the navigation dots */
+.mcic-navigation-dot {
+  height: 12px !important;
+  width: 12px !important;
+  background-color: #e0e0e0 !important;
+}
+
+/* Style the selected dot */
+.mcic-navigation-dot-selected {
   background-color: #4a5568 !important;
-  color: white !important;
-  font-weight: bold !important;
+  transform: scale(1.2) !important;
 }
 
-/* Style the container for all menu options */
-.mycdm-action-group {
-  padding: 0 4px !important; /* Add some padding */
-  background-color: #fafafa !important; /* Light background */
-}
-
-/* Make the menu items more interactive */
-.mycdm-action-item {
-  padding: 12px 16px !important;
-  transition: background-color 0.2s !important;
-}
-
-.mycdm-action-item:hover {
-  background-color: #f7fafc !important;
-  cursor: pointer !important;
+/* Style the navigation arrows */
+.mcic-left-arrow-button,
+.mcic-right-arrow-button {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 50% !important;
+  padding: 10px !important;
 }
 ```
 
 ### Important Note about Styling
 
-**You need to use `!important` in your CSS rules** when customizing the component styles. This is because the component uses its own styles internally, and `!important` ensures your custom styles take priority.
+**You may need to use `!important` in your CSS rules** when customizing the component styles if your own CSS specificity is not high enough to override the component's built-in styles.
 
-## Don't Forget to Activate Your Menu!
+## Don't Forget to Initialize Your Carousel!
 
-### The Critical Step: `setEventListeners()`
+### The Critical Step: `initialise()`
 
-After creating your menu, you **must** call the `setEventListeners()` method to make it work:
+After creating your carousel, you **must** call the `initialise()` method to make it work:
 
 ```javascript
-// Create your menu
-const menu = new CustomDropDownMenu({
+// Create your carousel
+const carousel = new CustomImageCarousel({
   // ...your options here
 });
 
-// ALWAYS do this or your menu won't work!
-menu.setEventListeners();
+// ALWAYS do this or your carousel won't work!
+carousel.initialise();
 ```
 
 This step is essential because it:
 
-- Connects your trigger button to the menu
-- Sets up the click-outside-to-close functionality
-- Enables all the interactive features
+- Creates the DOM structure for the carousel
+- Sets up event listeners for controls
+- Initializes the navigation system
 
-Without this step, your menu will be created but won't respond to any user interaction.
+## API Reference
+
+### CustomImageCarousel Options
+
+| Option           | Type        | Required | Description                                           |
+| ---------------- | ----------- | -------- | ----------------------------------------------------- |
+| `containerID`    | string      | Yes      | ID of the HTML element that will contain the carousel |
+| `imageItemArray` | ImageItem[] | Yes      | Array of images to display in the carousel            |
+
+### ImageItem Options
+
+| Option  | Type   | Required | Description                            |
+| ------- | ------ | -------- | -------------------------------------- |
+| `src`   | string | Yes      | Path or URL to the image               |
+| `scale` | number | Yes      | Scale factor for the image (usually 1) |
+
+### Methods
+
+| Method                          | Description                                                          |
+| ------------------------------- | -------------------------------------------------------------------- |
+| `initialise()`                  | **Required**: Sets up the carousel and returns the carousel instance |
+| `displayItemNumber(itemNumber)` | Navigates to a specific item (1-based index)                         |
 
 ## Common Examples
 
-### Example 1: Simple Settings Menu
+### Example 1: Product Gallery
 
 ```javascript
-import { CustomDropDownMenu, ActionItem } from "@pd200x/custom-dropdown-menu";
+import { CustomImageCarousel, ImageItem } from "@pd200x/custom-image-carousel";
 
-// Create and activate a settings menu
-const settingsMenu = new CustomDropDownMenu({
-  menuTitle: "Settings",
-  triggerElementID: "settings-button",
-  actionItemArray: [
-    new ActionItem("Profile", () => openProfilePage()),
-    new ActionItem("Preferences", () => showPreferences()),
-    new ActionItem("Logout", () => logoutUser()),
+// Create and initialize a product gallery
+const productGallery = new CustomImageCarousel({
+  containerID: "product-gallery",
+  imageItemArray: [
+    new ImageItem({ src: "product-front.jpg", scale: 1 }),
+    new ImageItem({ src: "product-back.jpg", scale: 1 }),
+    new ImageItem({ src: "product-side.jpg", scale: 1 }),
+    new ImageItem({ src: "product-detail.jpg", scale: 1 }),
   ],
-  height: "180px",
-  width: "160px",
-});
-
-// Don't forget this step!
-settingsMenu.setEventListeners();
+}).initialise();
 ```
 
-### Example 2: Using Multiple Menus
+### Example 2: Using the Display Method
 
 ```javascript
-// First menu - Document options
-const documentMenu = new CustomDropDownMenu({
-  menuTitle: "Document",
-  triggerElementID: "doc-menu-button",
-  actionItemArray: [
-    new ActionItem("New", () => createNewDoc()),
-    new ActionItem("Open", () => openDocDialog()),
-    new ActionItem("Save", () => saveCurrentDoc()),
-    new ActionItem("Print", () => printDoc()),
+// Create and initialize the carousel
+const carousel = new CustomImageCarousel({
+  containerID: "image-carousel",
+  imageItemArray: [
+    new ImageItem({ src: "image1.jpg", scale: 1 }),
+    new ImageItem({ src: "image2.jpg", scale: 1 }),
+    new ImageItem({ src: "image3.jpg", scale: 1 }),
+    new ImageItem({ src: "image4.jpg", scale: 1 }),
+    new ImageItem({ src: "image5.jpg", scale: 1 }),
   ],
-  height: "200px",
-  width: "150px",
-});
-documentMenu.setEventListeners();
+}).initialise();
 
-// Second menu - User options
-const userMenu = new CustomDropDownMenu({
-  menuTitle: "User",
-  triggerElementID: "user-menu-button",
-  actionItemArray: [
-    new ActionItem("View Profile", () => viewProfile()),
-    new ActionItem("Settings", () => openSettings()),
-    new ActionItem("Sign Out", () => signOut()),
-  ],
-  height: "160px",
-  width: "160px",
+// Navigate to the third image (index is 1-based)
+carousel.displayItemNumber(3);
+
+// Add button controls
+document.getElementById("prev-button").addEventListener("click", () => {
+  carousel.displayItemNumber(getCurrentIndex() - 1);
 });
-userMenu.setEventListeners();
+
+document.getElementById("next-button").addEventListener("click", () => {
+  carousel.displayItemNumber(getCurrentIndex() + 1);
+});
 ```
-
-## API Reference (For Advanced Users)
-
-### CustomDropDownMenu Options
-
-| Option             | Type         | Required | Description                                |
-| ------------------ | ------------ | -------- | ------------------------------------------ |
-| `menuTitle`        | string       | Yes      | Title shown at the top of the menu         |
-| `triggerElementID` | string       | Yes      | ID of the HTML element that opens the menu |
-| `actionItemArray`  | ActionItem[] | Yes      | Array of menu items                        |
-| `height`           | string       | Yes      | Height of the menu (e.g., "200px")         |
-| `width`            | string       | Yes      | Width of the menu (e.g., "180px")          |
-| `logEvent`         | boolean      | No       | Set to true to see events in console       |
-
-### Important Methods
-
-| Method                | What it does                                         |
-| --------------------- | ---------------------------------------------------- |
-| `setEventListeners()` | **Required**: Activates the menu (always call this!) |
-| `close()`             | Manually close the menu (rarely needed)              |
-
-## Dependencies
-
-This component uses [Smooth Scrollbar](https://github.com/idiotWu/smooth-scrollbar) for better scrolling in long menus.
 
 ## Browser Support
 
