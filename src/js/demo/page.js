@@ -1,5 +1,6 @@
 import npmLogo from "../../icons/npm_logo.svg";
 import GitHubLogo from "../../icons/github_logo.svg";
+import figmaImage from "../../images/figma_image.webp";
 import htmlImage from "../../images/html_image.webp";
 import cssImage from "../../images/css_image.webp";
 import javascriptImage from "../../images/javascript_image.png";
@@ -82,6 +83,7 @@ export default function createDemoPage() {
       new ImageItem({ src: nodejsImage, scale: 1 }),
       new ImageItem({ src: npmImage, scale: 1 }),
       new ImageItem({ src: webpackImage, scale: 1 }),
+      new ImageItem({ src: figmaImage, scale: 1.25 }),
       new ImageItem({ src: tailwindcssImage, scale: 1 }),
       new ImageItem({ src: prettierImage, scale: 1 }),
       new ImageItem({ src: eslintImage, scale: 1 }),
