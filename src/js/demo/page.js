@@ -39,14 +39,14 @@ export default function createDemoPage() {
       <div class="bg-[#F5F5F5] px-2.25 py-1.5 text-m font-bold rounded-md border-1 border-[#d7d7d7] border-l-7 border-l-[#AC1CFF] flex-1 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
         Image Carousel UI Component
       </div>
-      <div class="flex flex-row gap-4 items-center bg-[#F5F5F5] rounded-md border-1 border-[#d7d7d7] px-3 shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
+      <div class="flex flex-row gap-4 items-center bg-[#F5F5F5] rounded-md border-1 border-[#d7d7d7] px-3 shadow-[0px_4px_8px_rgba(0,0,0,15%)] select-none">
         <img id="npm-button" src="${npmLogo}" class="h-3.5 pt-0.5">
         <img id="github-button" src="${GitHubLogo}" class="h-3.5 pb-0.5">
       </div>
     </div>
     <div id="component-container" class="w-full h-[400px] max-md:h-[200px]"></div> 
     <div class="bg-[#F5F5F5] px-2.25 py-1.75 w-full text-center text-sm font-light rounded-md border-1 border-[#d7d7d7] shadow-[0px_4px_8px_rgba(0,0,0,15%)]">
-        Made with <span class="font-medium text-[#FF9500]">VanillaJS</span>, by <span class="font-medium text-[#0432FF] select-none" id="whatisaProCoder">whatisaProCoder</span>
+        Made with <span class="font-medium text-[#FF9500]">VanillaJS</span>, by <span class="font-medium text-[#0432FF] select-none hover:underline" id="whatisaProCoder">whatisaProCoder</span>
     </div>     
   `;
 
