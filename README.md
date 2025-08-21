@@ -14,14 +14,15 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 
 ## Features
 
-- 🖼️ **Smooth Image Scrolling** - Seamless transition between images
-- 🔢 **Navigation Dots** - Visual indicators of current position
-- ⬅️ **Arrow Controls** - Intuitive navigation buttons
-- 📱 **Responsive Design** - Works on all screen sizes
-- 🔄 **Smart Navigation** - Arrows hide at the beginning/end of carousel
-- 🚫 **Controlled Scrolling** - Prevents accidental user scrolling
-- ✨ **Easy Integration** - Simple API for quick implementation
+- 🖼️ **Smooth Image Scrolling** - Seamless transition between images using CSS scroll snapping
+- 🔢 **Navigation Dots** - Visual indicators showing current position in the carousel
+- ⬅️ **Arrow Controls** - Intuitive navigation buttons that appear/disappear intelligently
+- 📱 **Responsive Design** - Automatically adapts to different screen sizes
+- 🔄 **Smart Navigation** - Arrows hide at the beginning/end of carousel for better UX
+- 🚫 **Controlled Scrolling** - Prevents accidental user scrolling for more predictable behavior
+- ✨ **Easy Integration** - Simple API with minimal configuration required
 - 🪶 **Lightweight** - No external dependencies except for minimal CSS
+- 🎯 **Targeted Design** - Clean interface focused on showcasing your images
 
 ## Installation
 
@@ -83,14 +84,6 @@ carousel.initialise();
 ```
 
 That's it! Your image carousel is ready to use.
-
-## Features You'll Love
-
-- **Smooth Scrolling**: Elegant transitions between images using CSS scroll snapping
-- **Navigation Dots**: Clearly shows which image is currently displayed
-- **Arrow Controls**: Intuitive navigation buttons that appear/disappear intelligently
-- **Responsive Design**: Automatically adapts to different screen sizes
-- **Simple API**: Easy to implement with minimal code
 
 ## How to Customize the Look
 
