@@ -14,13 +14,19 @@
   position: relative;
 }
 
+@media screen and (min-width: 768px) {
+  .mcic-container {
+    padding-bottom: 2rem;
+  }
+}
+
 .mcic-image-group {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   height: 100%;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: transparent transparent;
   -ms-overflow-style: none;
   gap: 1rem;
@@ -55,6 +61,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 0.6rem;
 }
 
 .mcic-navigation-dot {

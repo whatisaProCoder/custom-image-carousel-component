@@ -9,6 +9,7 @@ export class CustomImageCarousel {
   #imageGroupElement;
   #currentIndex;
   #arrayLength;
+  #cycleInterval;
   constructor({ containerID, imageItemArray }) {
     this.containerID = containerID;
     this.imageItemArray = imageItemArray;
@@ -101,6 +102,7 @@ export class CustomImageCarousel {
 
     leftButton.addEventListener("click", () => {
       if (this.#currentIndex > 0) {
+        this.stopCycle();
         this.#scrollToItem(--this.#currentIndex);
         this.#handleNavigationState(this.#currentIndex);
       }
@@ -108,6 +110,7 @@ export class CustomImageCarousel {
 
     rightButton.addEventListener("click", () => {
       if (this.#currentIndex < this.#arrayLength - 1) {
+        this.stopCycle();
         this.#scrollToItem(++this.#currentIndex);
         this.#handleNavigationState(this.#currentIndex);
       }
@@ -115,6 +118,7 @@ export class CustomImageCarousel {
 
     this.#navigationDots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
+        this.stopCycle();
         this.#currentIndex = index;
         this.#scrollToItem(this.#currentIndex);
         this.#handleNavigationState(this.#currentIndex);
@@ -153,6 +157,21 @@ export class CustomImageCarousel {
         this.#scrollToItem(this.#currentIndex);
       }
     }, 750);
+  }
+  setCycle(delay) {
+    if (this.#cycleInterval) clearInterval(this.#cycleInterval);
+
+    this.#cycleInterval = setInterval(() => {
+      this.#currentIndex = (this.#currentIndex + 1) % this.#arrayLength;
+      this.#scrollToItem(this.#currentIndex);
+      this.#handleNavigationState(this.#currentIndex);
+    }, delay * 1000);
+  }
+  stopCycle() {
+    if (this.#cycleInterval) {
+      clearTimeout(this.#cycleInterval);
+      this.#cycleInterval = null;
+    }
   }
 }
 

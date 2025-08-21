@@ -88,5 +88,5 @@ export default function createDemoPage() {
     ],
   })
     .initialise()
-    .displayItemNumber(4);
+    .setCycle(1.5);
 }
