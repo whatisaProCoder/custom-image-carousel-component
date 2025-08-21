@@ -1,6 +1,6 @@
 {
   "name": "@pd200x/custom-image-carousel",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Custom-made Image Carousel UI Component.",
   "main": "index.js",
   "scripts": {
