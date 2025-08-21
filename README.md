@@ -10,6 +10,8 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
   <img src="./demo/demo.png" alt="Custom Image Carousel Demo" width="100%">
 </p>
 
+**[Live Demo](https://whatisaprocoder.github.io/custom-image-carousel-component/)** - See the component in action!
+
 ## Features
 
 - 🖼️ **Smooth Image Scrolling** - Seamless transition between images
