@@ -54,7 +54,10 @@ export default function createDemoPage() {
   const whatisaProCoder = demoPage.querySelector("#whatisaProCoder");
 
   npmButton.addEventListener("click", () => {
-    window.open("https://www.npmjs.com", "_blank");
+    window.open(
+      "https://www.npmjs.com/package/@pd200x/custom-image-carousel",
+      "_blank",
+    );
   });
 
   githubButton.addEventListener("click", () => {
