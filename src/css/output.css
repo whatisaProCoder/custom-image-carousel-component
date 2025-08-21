@@ -624,6 +624,16 @@
       gap: calc(var(--spacing) * 9);
     }
   }
+  .max-sm\:gap-10 {
+    @media (width < 40rem) {
+      gap: calc(var(--spacing) * 10);
+    }
+  }
+  .max-sm\:gap-15 {
+    @media (width < 40rem) {
+      gap: calc(var(--spacing) * 15);
+    }
+  }
 }
 @font-face {
   font-family: "Inter";
