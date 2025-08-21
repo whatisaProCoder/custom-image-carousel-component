@@ -245,7 +245,6 @@ The carousel includes several accessibility features:
 For optimal performance, consider these tips:
 
 - **Optimize Images**: Use modern formats like WebP and properly sized images
-- **Lazy Loading**: The carousel only loads images that are visible in the viewport
 - **Height Management**: Setting a fixed height for the carousel container prevents layout shifts
 
 ## Contributing
