@@ -230,15 +230,6 @@ Works in all modern browsers including:
 - Chrome, Firefox, Safari, Edge
 - Mobile browsers (iOS Safari, Android Chrome)
 
-## Accessibility
-
-The carousel includes several accessibility features:
-
-- Navigation controls are keyboard accessible
-- Arrow buttons have appropriate ARIA roles
-- Navigation dots provide visual feedback
-- All interactive elements are properly labeled for screen readers
-
 ## Performance Tips
 
 For optimal performance, consider these tips:
