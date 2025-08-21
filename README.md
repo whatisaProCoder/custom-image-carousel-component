@@ -8,7 +8,7 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 
 <p align="center">
-  <img src="./demo/demo.png" alt="Custom Image Carousel Demo" width="600">
+  <img src="./demo/demo.png" alt="Custom Image Carousel Demo" width="100%">
 </p>
 
 ## Features
