@@ -215,15 +215,6 @@ const carousel = new CustomImageCarousel({
 
 // Navigate to the third image (index is 1-based)
 carousel.displayItemNumber(3);
-
-// Add button controls
-document.getElementById("prev-button").addEventListener("click", () => {
-  carousel.displayItemNumber(getCurrentIndex() - 1);
-});
-
-document.getElementById("next-button").addEventListener("click", () => {
-  carousel.displayItemNumber(getCurrentIndex() + 1);
-});
 ```
 
 ## Browser Support
