@@ -1,11 +1,11 @@
 // Import components
 import {
-  ActionItem,
-  CustomDropDownMenu,
-} from "./src/js/components/drop_down_menu";
+  CustomImageCarousel,
+  ImageItem,
+} from "./src/js/components/custom-image-carousel";
 
 // Import styles
 import "./src/css/component.css";
 
 // Export components
-export { ActionItem, CustomDropDownMenu };
+export { CustomImageCarousel, ImageItem };

@@ -99,20 +99,18 @@ export class CustomImageCarousel {
       ".mcic-right-arrow-button",
     );
 
-    leftButton.addEventListener("click", (event) => {
+    leftButton.addEventListener("click", () => {
       if (this.#currentIndex > 0) {
         this.#scrollToItem(--this.#currentIndex);
         this.#handleNavigationState(this.#currentIndex);
       }
-      console.log(event.target, this.#currentIndex);
     });
 
-    rightButton.addEventListener("click", (event) => {
+    rightButton.addEventListener("click", () => {
       if (this.#currentIndex < this.#arrayLength - 1) {
         this.#scrollToItem(++this.#currentIndex);
         this.#handleNavigationState(this.#currentIndex);
       }
-      console.log(event.target, this.#currentIndex);
     });
 
     this.#navigationDots.forEach((dot, index) => {
@@ -137,13 +135,14 @@ export class CustomImageCarousel {
     );
     this.#removeSelectedClassInNavigationDots();
     this.#navigationDots[index].classList.add("mcic-navigation-dot-selected");
+
+    leftButton.classList.remove("mcic-arrow-button-hide");
+    rightButton.classList.remove("mcic-arrow-button-hide");
+
     if (index == 0) {
       leftButton.classList.add("mcic-arrow-button-hide");
     } else if (index == this.#arrayLength - 1) {
       rightButton.classList.add("mcic-arrow-button-hide");
-    } else {
-      leftButton.classList.remove("mcic-arrow-button-hide");
-      rightButton.classList.remove("mcic-arrow-button-hide");
     }
   }
   displayItemNumber(itemNumber) {

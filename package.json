@@ -1,7 +1,7 @@
 {
-  "name": "@pd200x/custom-dropdown-menu",
-  "version": "0.0.21",
-  "description": "Custom-made npm UI Component.",
+  "name": "@pd200x/custom-image-carousel",
+  "version": "0.0.1",
+  "description": "Custom-made Image Carousel UI Component.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -16,10 +16,10 @@
     "tailwind-cli:watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "keywords": [
-    "dropdown",
+    "carousel",
+    "image",
     "ui",
     "component",
-    "menu",
     "tailwind",
     "custom"
   ],
@@ -63,16 +63,16 @@
   },
   "files": [
     "index.js",
-    "./src/js/components/drop_down_menu.js",
+    "./src/js/components/custom-image-carousel.js",
     "./src/fonts/Inter.ttf",
     "./src/css/component.css"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whatisaProCoder/custom-dropdown-menu.git"
+    "url": "https://github.com/whatisaProCoder/custom-image-carousel-component"
   },
   "bugs": {
-    "url": "https://github.com/whatisaProCoder/custom-dropdown-menu/issues"
+    "url": "https://github.com/whatisaProCoder/custom-image-carousel-component/issues"
   },
-  "homepage": "https://whatisaprocoder.github.io/custom-dropdown-menu/"
+  "homepage": "https://whatisaprocoder.github.io/custom-image-carousel-component/"
 }
