@@ -24,6 +24,7 @@ A lightweight, easy-to-use image carousel component with navigation dots, arrow 
 - 🪶 **Lightweight** - No external dependencies except for minimal CSS
 - 🎯 **Targeted Design** - Clean interface focused on showcasing your images
 - 🔄 **Auto Cycling** - Built-in support for automatic image cycling
+- 🔗 **Image Linking** - Add clickable links to your carousel images
 
 ## Installation
 
@@ -69,9 +70,13 @@ import { CustomImageCarousel, ImageItem } from "@pd200x/custom-image-carousel";
 
 // Create an array of image items
 const imageItems = [
-  new ImageItem({ src: "path/to/image1.jpg", scale: 1 }),
-  new ImageItem({ src: "path/to/image2.jpg", scale: 1 }),
-  new ImageItem({ src: "path/to/image3.jpg", scale: 1 }),
+  new ImageItem({ src: "path/to/image1.jpg" }),
+  new ImageItem({
+    src: "path/to/image2.jpg",
+    link: "https://example.com",
+    mode: "_blank",
+  }),
+  new ImageItem({ src: "path/to/image3.jpg", link: "https://anothersite.com" }),
 ];
 
 // Create and initialize the carousel
@@ -169,10 +174,11 @@ This step is essential because it:
 
 ### ImageItem Options
 
-| Option  | Type   | Required | Description                            |
-| ------- | ------ | -------- | -------------------------------------- |
-| `src`   | string | Yes      | Path or URL to the image               |
-| `scale` | number | Yes      | Scale factor for the image (usually 1) |
+| Option | Type   | Required | Description                                                                      |
+| ------ | ------ | -------- | -------------------------------------------------------------------------------- |
+| `src`  | string | Yes      | Path or URL to the image                                                         |
+| `link` | string | No       | URL to navigate to when the image is clicked                                     |
+| `mode` | string | No       | Target for link: "\_blank" (new tab) or "\_self" (same tab). Default is "\_self" |
 
 ### Methods
 
@@ -185,7 +191,7 @@ This step is essential because it:
 
 ## Common Examples
 
-### Example 1: Product Gallery
+### Example 1: Product Gallery with Links
 
 ```javascript
 import { CustomImageCarousel, ImageItem } from "@pd200x/custom-image-carousel";
@@ -194,10 +200,17 @@ import { CustomImageCarousel, ImageItem } from "@pd200x/custom-image-carousel";
 const productGallery = new CustomImageCarousel({
   containerID: "product-gallery",
   imageItemArray: [
-    new ImageItem({ src: "product-front.jpg", scale: 1 }),
-    new ImageItem({ src: "product-back.jpg", scale: 1 }),
-    new ImageItem({ src: "product-side.jpg", scale: 1 }),
-    new ImageItem({ src: "product-detail.jpg", scale: 1 }),
+    new ImageItem({
+      src: "product-front.jpg",
+      link: "https://store.com/product-details",
+    }),
+    new ImageItem({ src: "product-back.jpg" }),
+    new ImageItem({ src: "product-side.jpg" }),
+    new ImageItem({
+      src: "product-detail.jpg",
+      link: "https://store.com/size-guide",
+      mode: "_blank",
+    }),
   ],
 }).initialise();
 ```
@@ -209,11 +222,11 @@ const productGallery = new CustomImageCarousel({
 const carousel = new CustomImageCarousel({
   containerID: "image-carousel",
   imageItemArray: [
-    new ImageItem({ src: "image1.jpg", scale: 1 }),
-    new ImageItem({ src: "image2.jpg", scale: 1 }),
-    new ImageItem({ src: "image3.jpg", scale: 1 }),
-    new ImageItem({ src: "image4.jpg", scale: 1 }),
-    new ImageItem({ src: "image5.jpg", scale: 1 }),
+    new ImageItem({ src: "image1.jpg" }),
+    new ImageItem({ src: "image2.jpg" }),
+    new ImageItem({ src: "image3.jpg" }),
+    new ImageItem({ src: "image4.jpg" }),
+    new ImageItem({ src: "image5.jpg" }),
   ],
 }).initialise();
 
@@ -221,16 +234,20 @@ const carousel = new CustomImageCarousel({
 carousel.displayItemNumber(3);
 ```
 
-### Example 3: Auto-Cycling Carousel
+### Example 3: Auto-Cycling Carousel with Links
 
 ```javascript
 // Create and initialize a carousel with auto-cycling
 const autoCyclingCarousel = new CustomImageCarousel({
   containerID: "auto-carousel",
   imageItemArray: [
-    new ImageItem({ src: "slide1.jpg", scale: 1 }),
-    new ImageItem({ src: "slide2.jpg", scale: 1 }),
-    new ImageItem({ src: "slide3.jpg", scale: 1 }),
+    new ImageItem({ src: "slide1.jpg", link: "https://example.com/page1" }),
+    new ImageItem({
+      src: "slide2.jpg",
+      link: "https://example.com/page2",
+      mode: "_blank",
+    }),
+    new ImageItem({ src: "slide3.jpg" }),
   ],
 }).initialise();
 
