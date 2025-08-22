@@ -77,16 +77,56 @@ export default function createDemoPage() {
   new CustomImageCarousel({
     containerID: "component-container",
     imageItemArray: [
-      new ImageItem({ src: htmlImage, scale: 1 }),
-      new ImageItem({ src: cssImage, scale: 1 }),
-      new ImageItem({ src: javascriptImage, scale: 1 }),
-      new ImageItem({ src: nodejsImage, scale: 1 }),
-      new ImageItem({ src: npmImage, scale: 1 }),
-      new ImageItem({ src: webpackImage, scale: 1 }),
-      new ImageItem({ src: figmaImage, scale: 1.25 }),
-      new ImageItem({ src: tailwindcssImage, scale: 1 }),
-      new ImageItem({ src: prettierImage, scale: 1 }),
-      new ImageItem({ src: eslintImage, scale: 1 }),
+      new ImageItem({
+        src: htmlImage,
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: cssImage,
+        link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: javascriptImage,
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: nodejsImage,
+        link: "https://nodejs.org",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: npmImage,
+        link: "https://www.npmjs.com",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: webpackImage,
+        link: "https://webpack.js.org",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: figmaImage,
+        link: "https://www.figma.com",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: tailwindcssImage,
+        link: "https://tailwindcss.com",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: prettierImage,
+        link: "https://prettier.io",
+        mode: "_blank",
+      }),
+      new ImageItem({
+        src: eslintImage,
+        link: "https://eslint.org",
+        mode: "_blank",
+      }),
     ],
   })
     .initialise()

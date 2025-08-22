@@ -72,7 +72,10 @@ export class CustomImageCarousel {
 
       const image = document.createElement("img");
       image.src = imageItem.src;
-      image.style.scale = imageItem.scale;
+      image.addEventListener("click", () => {
+        if (imageItem.link != "empty")
+          window.open(imageItem.link, imageItem.mode);
+      });
 
       imageElement.appendChild(image);
       this.#imageGroupElement.appendChild(imageElement);
@@ -176,8 +179,9 @@ export class CustomImageCarousel {
 }
 
 export class ImageItem {
-  constructor({ src, scale }) {
+  constructor({ src, link, mode }) {
     this.src = src;
-    this.scale = scale;
+    this.link = link || "empty";
+    this.mode = mode || "_self";
   }
 }
